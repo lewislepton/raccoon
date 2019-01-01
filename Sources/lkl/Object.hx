@@ -15,6 +15,8 @@ class Object {
 	public var acceleration = 0.3;
 	public var friction = 3.6;
 
+	public var depth:Float;
+
 	public function new(?x:Float, ?y:Float, ?width:Float, ?height:Float){
 		position = new Vector2(x, y);
 
@@ -23,11 +25,15 @@ class Object {
 
 		center = new Vector2(width / 2, height / 2);
 
+		depth = position.y + height;
+
 		activate(x, y);
 	}
 
 	public function update(){
 		if (!active) return;
+
+		depth = position.y + height;
 
 		center.x = width / 2;
 		center.y = height / 2;
