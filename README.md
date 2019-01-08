@@ -8,7 +8,8 @@ This repo will be updated each time the library is updated in the series & built
 # Install
 Within terminal/command line & making sure haxe/haxelib is setup:
 
-	haxelib install git lkl https://github.com/lewislepton/lkl.git
+	haxelib git lkl https://github.com/lewislepton/lkl.git
+
 
 # Update
 Simply enter this in terminal/command line:
