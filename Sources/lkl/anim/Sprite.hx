@@ -13,6 +13,7 @@ https://github.com/lewislepton/kha-tutorial-series
 import kha.Color;
 import kha.graphics2.Graphics;
 import kha.Image;
+import kha.Assets;
 
 import lkl.anim.Animation;
 import lkl.Entity;
@@ -24,9 +25,9 @@ class Sprite extends Entity {
 	var w: Float;
 	var h: Float;
 	
-	public function new(image: Image, x:Float = 0, y:Float = 0, width: Int = 0, height: Int = 0){
+	public function new(imagename: String, x:Float = 0, y:Float = 0, width: Int = 0, height: Int = 0){
 		super(x, y, width, height);
-		this.image = image;
+		this.image = Reflect.field(Assets.images, imagename);
 		w = width;
 		h = height;
 		if (this.width  == 0 && image != null) this.width  = image.width;
@@ -51,8 +52,8 @@ class Sprite extends Entity {
 		}
 	}
 	
-	public function setImage(image: Image): Void {
-		this.image = image;
+	public function set(imagename:String): Void {
+		this.image = Reflect.field(Assets.images, imagename);
 	}
 	
 	public function outOfView(): Void {

@@ -15,8 +15,8 @@ class Text extends Entity {
 
 	public var size:Int;
 
-	public function new(font:Font, string:String, ?x:Float = 0, ?y:Float = 0, ?size:Int = 16){
-		this.font = font;
+	public function new(fontname:String, string:String, ?x:Float = 0, ?y:Float = 0, ?size:Int = 16){
+		this.font = Reflect.field(Assets.fonts, fontname);
 		this.string = string;
 		this.size = size;
 
@@ -33,5 +33,9 @@ class Text extends Entity {
 		graphics.font = font;
 		graphics.fontSize = size;
 		graphics.drawString(string, position.x, position.y);
+	}
+
+	public function set(fontname:String){
+		this.font = Reflect.field(Assets.fonts, fontname);
 	}
 }
