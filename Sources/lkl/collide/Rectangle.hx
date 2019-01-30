@@ -12,6 +12,10 @@ class Rectangle extends Object {
 		super(x, y, width, height);
 	}
 
+	public function overlap(other:Rectangle){
+		return position.x <= other.position.x + other.width && position.x + width >= other.position.x && position.y <= other.position.y + other.height && position.y + height >= other.position.y;
+	}
+
 	public function collideRect(entity:Entity):Bool {
 		checkRectCollision();
 		var dx = (this.position.x + this.width / 2) - (entity.position.x + entity.width / 2);

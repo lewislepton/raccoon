@@ -17,6 +17,13 @@ class Object {
 
 	public var depth:Float;
 
+	public var life:Int = 3;
+
+	public var invincible = false;
+	public var invincibleTimerMax = 3.0;
+	public var invincibleTimer:Float;
+	public var invincibleTimerSpeed = 0.05;
+
 	public function new(?x:Float, ?y:Float, ?width:Float, ?height:Float){
 		position = new Vector2(x, y);
 
@@ -26,6 +33,8 @@ class Object {
 		center = new Vector2(width / 2, height / 2);
 
 		depth = position.y + height;
+
+		invincibleTimer = invincibleTimerMax;
 
 		activate(x, y);
 	}
@@ -37,6 +46,15 @@ class Object {
 
 		center.x = width / 2;
 		center.y = height / 2;
+
+		if (invincible == true){
+			invincibleTimer -= invincibleTimerSpeed;
+		}
+
+		if (invincibleTimer <= 0.0){
+			invincible = false;
+			invincibleTimer = invincibleTimerMax;
+		}
 	}
 
 	public function render(graphics:Graphics){
