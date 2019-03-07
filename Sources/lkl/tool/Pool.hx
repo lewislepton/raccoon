@@ -1,6 +1,6 @@
 package lkl.tool;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
@@ -38,10 +38,10 @@ class Pool<O:Object> extends Object {
 		super.update();
 	}
 
-	override public function render(graphics:Graphics){
+	override public function render(canvas:Canvas){
 		for (member in entity){
 			if (member != null && member.active){
-				member.render(graphics);
+				member.render(canvas);
 			}
 		}
 	}

@@ -10,6 +10,7 @@ https://lewislepton.com
 https://github.com/lewislepton/kha-tutorial-series
 */
 
+import kha.Canvas;
 import kha.Color;
 import kha.graphics2.Graphics;
 import kha.Image;
@@ -44,11 +45,11 @@ class Sprite extends Entity {
 		animation.next();
 	}
 	
-	override public function render(graphics: Graphics): Void {
-		super.render(graphics);
+	override public function render(canvas: Canvas): Void {
+		super.render(canvas);
 		if (image != null) {
-			graphics.color = Color.White;
-			graphics.drawScaledSubImage(image, Std.int(animation.get() * w) % image.width, Math.floor(animation.get() * w / image.width) * h, w, h, Math.round(position.x), Math.round(position.y), width, height);
+			canvas.g2.color = Color.White;
+			canvas.g2.drawScaledSubImage(image, Std.int(animation.get() * w) % image.width, Math.floor(animation.get() * w / image.width) * h, w, h, Math.round(position.x), Math.round(position.y), width, height);
 		}
 	}
 	

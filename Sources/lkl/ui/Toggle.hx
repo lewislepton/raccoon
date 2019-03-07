@@ -1,6 +1,6 @@
 package lkl.ui;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
@@ -24,18 +24,18 @@ class Toggle extends Entity {
 		super.update();
 	}
 
-	override public function render(graphics:Graphics){
-		super.render(graphics);
+	override public function render(canvas:Canvas){
+		super.render(canvas);
 		if (isOn){
-			graphics.color = colorOn;
-			graphics.fillRect(position.x, position.y, width, height);
-			graphics.color = colorFrame;
-			graphics.drawRect(position.x, position.y, width, height);
+			canvas.g2.color = colorOn;
+			canvas.g2.fillRect(position.x, position.y, width, height);
+			canvas.g2.color = colorFrame;
+			canvas.g2.drawRect(position.x, position.y, width, height);
 		} else {
-			graphics.color = colorOff;
-			graphics.fillRect(position.x, position.y, width, height);
-			graphics.color = colorFrame;
-			graphics.drawRect(position.x, position.y, width, height);
+			canvas.g2.color = colorOff;
+			canvas.g2.fillRect(position.x, position.y, width, height);
+			canvas.g2.color = colorFrame;
+			canvas.g2.drawRect(position.x, position.y, width, height);
 		}
 	}
 

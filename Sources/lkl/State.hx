@@ -1,6 +1,6 @@
 package lkl;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 import kha.input.KeyCode;
 
 class State {
@@ -11,7 +11,7 @@ class State {
 
 	public function update(){}
 
-	public function render(graphics:Graphics){}
+	public function render(canvas:Canvas){}
 
 	public function onKeyDown(keyCode:KeyCode){}
 

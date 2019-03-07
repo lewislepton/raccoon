@@ -1,6 +1,6 @@
 package lkl.particle;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
@@ -33,10 +33,10 @@ class Emitter extends Entity {
 		}
 	}
 
-	override public function render(graphics:Graphics){
-		super.render(graphics);
+	override public function render(canvas:Canvas){
+		super.render(canvas);
 		for (particle in arParticle){
-			particle.render(graphics);
+			particle.render(canvas);
 		}
 	}
 

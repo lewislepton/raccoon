@@ -1,6 +1,6 @@
 package lkl.ui;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
@@ -27,12 +27,12 @@ class Text extends Entity {
 		super.update();
 	}
 
-	override public function render(graphics:Graphics){
-		super.render(graphics);
-		graphics.color = color;
-		graphics.font = font;
-		graphics.fontSize = size;
-		graphics.drawString(string, position.x, position.y);
+	override public function render(canvas:Canvas){
+		super.render(canvas);
+		canvas.g2.color = color;
+		canvas.g2.font = font;
+		canvas.g2.fontSize = size;
+		canvas.g2.drawString(string, position.x, position.y);
 	}
 
 	public function set(fontname:String){

@@ -1,6 +1,6 @@
 package lkl.particle;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 import kha.Color;
 
 import lkl.Entity;
@@ -17,9 +17,9 @@ class Particle extends Entity {
 		velocity.y -= acceleration;
 	}
 
-	override public function render(graphics:Graphics){
-		super.render(graphics);
-		graphics.color = Color.White;
-		graphics.fillRect(position.x, position.y, width, height);
+	override public function render(canvas:Canvas){
+		super.render(canvas);
+		canvas.g2.color = Color.White;
+		canvas.g2.fillRect(position.x, position.y, width, height);
 	}
 }

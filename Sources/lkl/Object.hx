@@ -1,6 +1,6 @@
 package lkl;
 
-import kha.graphics2.Graphics;
+import kha.Canvas;
 import kha.math.Vector2;
 
 class Object {
@@ -57,7 +57,7 @@ class Object {
 		}
 	}
 
-	public function render(graphics:Graphics){
+	public function render(canvas:Canvas){
 		if (!active) return;
 	}
 
