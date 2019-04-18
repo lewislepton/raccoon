@@ -23,6 +23,10 @@ In a Kha project, go to the `khafile.js` add put this in:
 
 You can then use the library in a Kha project
 
+Also this library can be used locally in a project.
+
+In the project folder that contains, `Sources`, `Assets` etc. Create another folder called `Libraries`. You can place the folder, which contains the `haxelib.js` & `Sources` of the library into the `Libraries` folder.
+
 # Player Class Example
 This player moves in all directions, with no downward velocity
 
