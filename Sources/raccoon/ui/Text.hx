@@ -1,4 +1,4 @@
-package lkl.ui;
+package raccoon.ui;
 
 import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
@@ -6,7 +6,7 @@ import kha.Color;
 import kha.Assets;
 import kha.Font;
 
-import lkl.Entity;
+import raccoon.Entity;
 
 class Text extends Entity {
 	public var font:Font;

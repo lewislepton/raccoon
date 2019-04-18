@@ -1,4 +1,4 @@
-package lkl.tool;
+package raccoon.tool;
 
 class Direction {
 	public inline static var UP = 1;

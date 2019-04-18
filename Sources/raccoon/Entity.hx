@@ -1,9 +1,9 @@
-package lkl;
+package raccoon;
 
 import kha.math.Vector2;
 
-import lkl.collide.Rectangle;
-import lkl.tool.Direction;
+import raccoon.collide.Rectangle;
+import raccoon.tool.Direction;
 
 class Entity extends Rectangle {
 	public var platformer = false;

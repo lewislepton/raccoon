@@ -1,4 +1,4 @@
-package lkl;
+package raccoon;
 
 import kha.Canvas;
 import kha.input.KeyCode;

@@ -1,4 +1,4 @@
-package lkl.anim;
+package raccoon.anim;
 
 /*
 Originally coded & created by Robert Konrad

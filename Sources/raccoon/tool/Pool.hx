@@ -1,11 +1,11 @@
-package lkl.tool;
+package raccoon.tool;
 
 import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
 
-import lkl.Object;
+import raccoon.Object;
 
 class Pool<O:Object> extends Object {
 	public var entity:Array<O>;

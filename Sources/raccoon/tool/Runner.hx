@@ -1,8 +1,8 @@
-package lkl.tool;
+package raccoon.tool;
 
-import lkl.Entity;
+import raccoon.Entity;
 
-class Follower {
+class Runner {
 	public var speed = 0.6;
 	public var range = 200.00;
 	var rate = 1.0;
@@ -21,8 +21,8 @@ class Follower {
 			distanceX = rate * distanceX / total;
 			distanceY = rate * distanceY / total;
 
-			x += distanceX;
-			y += distanceY;
+			x -= distanceX;
+			y -= distanceY;
 
 			var totalDistance = Math.sqrt(x * x + y * y);
 

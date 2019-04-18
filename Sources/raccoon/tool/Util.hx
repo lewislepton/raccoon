@@ -1,4 +1,4 @@
-package lkl.tool;
+package raccoon.tool;
 
 class Util {
 	public static function randomRangeFloat(min:Float, max:Float):Float {

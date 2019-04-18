@@ -1,4 +1,4 @@
-package lkl.anim;
+package raccoon.anim;
 
 /*
 Originally coded & created by Robert Konrad
@@ -16,8 +16,8 @@ import kha.graphics2.Graphics;
 import kha.Image;
 import kha.Assets;
 
-import lkl.anim.Animation;
-import lkl.Entity;
+import raccoon.anim.Animation;
+import raccoon.Entity;
 
 class Sprite extends Entity {
 	private var image: Image;

@@ -1,13 +1,13 @@
-package lkl.particle;
+package raccoon.particle;
 
 import kha.Canvas;
 using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
 
-import lkl.Entity;
-import lkl.particle.Particle;
-import lkl.tool.Util;
+import raccoon.Entity;
+import raccoon.particle.Particle;
+import raccoon.tool.Util;
 
 class Emitter extends Entity {
 	public var arParticle:Array<Particle>;

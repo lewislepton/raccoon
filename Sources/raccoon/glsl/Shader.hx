@@ -1,4 +1,4 @@
-package lkl.glsl;
+package raccoon.glsl;
 
 import kha.Canvas;
 import kha.Scheduler;
@@ -10,7 +10,7 @@ import kha.graphics4.VertexStructure;
 import kha.graphics4.PipelineState;
 import kha.graphics4.FragmentShader;
 
-import lkl.Object;
+import raccoon.Object;
 
 class Shader extends Object {
   var pipeline:PipelineState;

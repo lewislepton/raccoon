@@ -1,8 +1,8 @@
-package lkl.collide;
+package raccoon.collide;
 
 import kha.math.Vector2;
-import lkl.Object;
-import lkl.tool.Direction;
+import raccoon.Object;
+import raccoon.tool.Direction;
 
 class Rectangle extends Object {
 	public var onGround = false;

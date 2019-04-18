@@ -1,4 +1,4 @@
-package lkl.tween;
+package raccoon.tween;
 
 class Back {
   // Modeled after the overshooting cubic y = x^3-x*sin(x*pi)

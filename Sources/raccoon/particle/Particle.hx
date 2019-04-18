@@ -1,9 +1,9 @@
-package lkl.particle;
+package raccoon.particle;
 
 import kha.Canvas;
 import kha.Color;
 
-import lkl.Entity;
+import raccoon.Entity;
 
 class Particle extends Entity {
 	

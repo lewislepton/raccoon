@@ -1,4 +1,4 @@
-package lkl.tween;
+package raccoon.tween;
 
 class Tween {
   var from:Float;
