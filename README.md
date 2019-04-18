@@ -1,5 +1,5 @@
-![lkl-logo](image/lkl-logo.png)
-# lkl
+![raccoon](image/raccoon.png)
+# raccoon
 
 This library is from the [Kha Tutorial Series Github](https://github.com/lewislepton/kha-tutorial-series) & the [Kha Tutorial Series YouTube Playlist](https://www.youtube.com/playlist?list=PL4neAtv21WOmmR5mKb7TQvEQHpMh1h0po)
 
@@ -8,7 +8,7 @@ This repo will be updated each time the library is updated in the series & built
 # Install
 Within terminal/command line & making sure haxe/haxelib is setup:
 
-	haxelib git lkl https://github.com/lewislepton/lkl.git
+	haxelib git raccoon https://github.com/lewislepton/raccoon.git
 
 
 # Update
@@ -19,7 +19,7 @@ Simply enter this in terminal/command line:
 # How To Use?
 In a Kha project, go to the `khafile.js` add put this in:
 
-	project.addLibrary('lkl');
+	project.addLibrary('raccoon');
 
 You can then use the library in a Kha project
 
@@ -30,7 +30,7 @@ This player moves in all directions, with no downward velocity
 	import kha.Color;
 	import kha.input.KeyCode;
 
-	import lkl.Entity;
+	import raccoon.Entity;
 
 	class Player extends Entity {
 		public var up:Bool;
@@ -97,7 +97,7 @@ This player moves in all directions, with no downward velocity
 	import kha.Framebuffer;
 	import kha.input.Mouse;
 
-	import lkl.particle.Emitter;
+	import raccoon.particle.Emitter;
 
 	class Project {
 		var emitter:Emitter;
