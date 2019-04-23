@@ -128,6 +128,40 @@ This player moves in all directions, with no downward velocity
 		}
 	}
 
+# Scene Example
+
+	import kha.Canvas;
+	import kha.input.Keyboard;
+	import kha.input.KeyCode;
+
+	import raccoon.State;
+
+	import Player;
+
+	class PlayState extends State {
+		var player:Player;
+
+		public function new(){
+			player = new Player(32, 32, 32, 32);
+			add(player);
+		}
+
+		override public function update():Void {
+			super.update();
+		}
+
+		override public function render(canvas:Canvas):Void {
+			super.render(canvas);
+		}
+
+		public function onKeyDown(keyCode:KeyCode):Void {
+			switch(keycode){
+				case A: remove(player);
+				case B: add(player);
+			}
+		}
+	}
+
 All the best, have phün & happy coding
 
 [Lewis Lepton](https://lewislepton.com)
