@@ -2,16 +2,23 @@ package raccoon;
 
 import kha.Canvas;
 import kha.input.KeyCode;
+import raccoon.Scene;
 
-class State {
+class State extends Scene {
 	public static var activeState:State;
 	static var states:Map<String, State>;
 
-	public function new(){}
+	public function new(){
+		super();
+	}
 
-	public function update(){}
+	override public function update(){
+		super.update();
+	}
 
-	public function render(canvas:Canvas){}
+	override public function render(canvas:Canvas){
+		super.render(canvas);
+	}
 
 	public function onKeyDown(keyCode:KeyCode){}
 
@@ -37,12 +44,12 @@ class State {
 		states = new Map<String, State>();
 	}
 
-	public static function add(name:String, state:State):State {
+	public static function addState(name:String, state:State):State {
 		states.set(name, state);
 		return state;
 	}
 
-	public static function remove(name:String){
+	public static function removeState(name:String){
 		states.remove(name);
 	}
 
