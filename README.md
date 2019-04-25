@@ -29,6 +29,11 @@ Also this library can be used locally in a project. In the project folder that c
 
 Check the `examples` folder. This holds examples for many different things that `raccoon` can do. This will be updated with newer tests & interesting things that the engine can do
 
+* Keyboard Movement
+* Particles
+* Shaders
+* UI
+
 All the best, have phün & happy coding
 
 [Lewis Lepton](https://lewislepton.com)
