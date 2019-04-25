@@ -1,9 +1,9 @@
 ![raccoon](image/raccoon.png)
 # raccoon
 
-This library is from the [Kha Tutorial Series Github](https://github.com/lewislepton/kha-tutorial-series) & the [Kha Tutorial Series YouTube Playlist](https://www.youtube.com/playlist?list=PL4neAtv21WOmmR5mKb7TQvEQHpMh1h0po)
+This engine [formerly `lkl`] is from the [Kha Tutorial Series Github](https://github.com/lewislepton/kha-tutorial-series) & the [Kha Tutorial Series YouTube Playlist](https://www.youtube.com/playlist?list=PL4neAtv21WOmmR5mKb7TQvEQHpMh1h0po)
 
-This repo will be updated each time the library is updated in the series & built upon thru-out the series
+This repo will be updated each time the engine is updated in the series & built upon thru-out
 
 # Install
 Within terminal/command line & making sure haxe/haxelib is setup:
@@ -21,11 +21,9 @@ In a Kha project, go to the `khafile.js` add put this in:
 
 	project.addLibrary('raccoon');
 
-You can then use the library in a Kha project
+You can then use the engine in a Kha project
 
-Also this library can be used locally in a project.
-
-In the project folder that contains, `Sources`, `Assets` etc. Create another folder called `Libraries`. You can place the folder, which contains the `haxelib.js` & `Sources` of the library into the `Libraries` folder.
+Also this library can be used locally in a project. In the project folder that contains, `Sources`, `Assets` etc. Create another folder called `Libraries`. You can place the folder, which contains the `haxelib.js` & `Sources` of the library into the `Libraries` folder.
 
 # Examples
 
