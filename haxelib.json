@@ -1,4 +1,7 @@
 {
 	"name": "raccoon",
-	"classPath": "Sources"
+	"classPath": "Sources",
+	"tags": ["raccoon", "engine", "game"],
+	"url" : "https://github.com/lewislepton/raccoon",
+	"contributors": ["Lewis Lepton"]
 }
