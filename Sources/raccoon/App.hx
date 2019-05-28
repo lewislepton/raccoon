@@ -15,9 +15,6 @@ import kha.ScreenCanvas;
 import raccoon.State;
 
 class App {
-	public static var mouseX:Int = 0;
-	public static var mouseY:Int = 0;
-
   var imageQuality:ImageScaleQuality;
 
 	public function new(){
@@ -67,26 +64,26 @@ class App {
 	}
 
 	public function onMouseDown(button:Int, x:Int, y:Int):Void {
-		mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
-		mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
 		if (State.activeState != null){
-			State.activeState.onMouseDown(button, mouseX, mouseY);
+			State.activeState.onMouseDown(button, Raccoon.mouseX, Raccoon.mouseY);
 		}
 	}
 
 	public function onMouseUp(button:Int, x:Int, y:Int):Void {
-		mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
-		mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
 		if (State.activeState != null){
-			State.activeState.onMouseUp(button, mouseX, mouseY);
+			State.activeState.onMouseUp(button, Raccoon.mouseX, Raccoon.mouseY);
 		}
 	}
 
 	public function onMouseMove(x:Int, y:Int, cx:Int, cy:Int):Void {
-		mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
-		mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseX = Scaler.transformX(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
+		Raccoon.mouseY = Scaler.transformY(x, y, Raccoon.backbuffer, ScreenCanvas.the, System.screenRotation);
 		if (State.activeState != null){
-			State.activeState.onMouseMove(mouseX, mouseY, cx, cy);
+			State.activeState.onMouseMove(Raccoon.mouseX, Raccoon.mouseY, cx, cy);
 		}
 	}
 

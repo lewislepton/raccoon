@@ -27,7 +27,7 @@ class Emitter extends Entity {
 		var p = arParticle.length;
 		while (p --> 0){
 			arParticle[p].update();
-			if (arParticle[p].position.x <= 0 || arParticle[p].position.x >= Raccoon.BUFFERWIDTH || arParticle[p].position.y <= 0 || arParticle[p].position.y >= Raccoon.BUFFERHEIGHT){
+			if (arParticle[p].position.x <= 0 || arParticle[p].position.x >= Main.WIDTH || arParticle[p].position.y <= 0 || arParticle[p].position.y >= Main.HEIGHT){
 				arParticle.splice(p, 1);
 			}
 		}
