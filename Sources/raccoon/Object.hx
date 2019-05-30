@@ -23,6 +23,8 @@ class Object {
 	public var invincibleTimerMax = 3.0;
 	public var invincibleTimer:Float;
 	public var invincibleTimerSpeed = 0.05;
+	
+	public var rotation:Float = 0;
 
 	public function new(?x:Float, ?y:Float, ?width:Float, ?height:Float){
 		position = new Vector2(x, y);
