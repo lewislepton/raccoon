@@ -11,7 +11,7 @@ class Pool<O:Object> extends Object {
 	public var entity:Array<O>;
 	public var max:Int;
 
-	private var count:Int = 0;
+	private var _count:Int = 0;
 
 	public function new(max:Int = 100){
 		super();
@@ -27,8 +27,8 @@ class Pool<O:Object> extends Object {
 				if (member.active){
 					member.update();
 					if (!member.active){
-						if (i < count){
-							count = i;
+						if (i < _count){
+							_count = i;
 						}
 					}
 				}
@@ -47,12 +47,12 @@ class Pool<O:Object> extends Object {
 	}
 
 	private function first():Int {
-		var i = count;
-		while (i < entity.length + count){
+		var i = _count;
+		while (i < entity.length + _count){
 			var h = i % entity.length;
 			if (entity[h] == null || !entity[h].active){
 				if (i < entity.length){
-					count++;
+					_count++;
 				}
 			}
 			i++;

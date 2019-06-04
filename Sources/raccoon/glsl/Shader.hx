@@ -13,7 +13,7 @@ import kha.graphics4.FragmentShader;
 import raccoon.Object;
 
 class Shader extends Object {
-  var pipeline:PipelineState;
+  private var _pipeline:PipelineState;
   public var shader:FragmentShader;
   public var timeID:ConstantLocation;
 
@@ -21,39 +21,39 @@ class Shader extends Object {
     super();
     this.shader = shader;
 
-    pipeline = new PipelineState();
-    pipeline.fragmentShader = shader;
+    _pipeline = new PipelineState();
+    _pipeline.fragmentShader = shader;
 
     var structure = new VertexStructure();
     structure.add('vertexPosition', VertexData.Float3);
 
     switch (shadertype){
       case 0:
-        pipeline.vertexShader = Shaders.painter_colored_vert;
+        _pipeline.vertexShader = Shaders.painter_colored_vert;
         structure.add('vertexColor', VertexData.Float4);
 
       case 1:
-        pipeline.vertexShader = Shaders.painter_image_vert;
+        _pipeline.vertexShader = Shaders.painter_image_vert;
         structure.add('texPosition', VertexData.Float2);
         structure.add('vertexColor', VertexData.Float4);
     default: return;
     }
 
-    pipeline.inputLayout = [structure];
+    _pipeline.inputLayout = [structure];
 
-    pipeline.blendSource = BlendingFactor.SourceAlpha;
-    pipeline.blendDestination = BlendingFactor.InverseSourceAlpha;
-    pipeline.alphaBlendSource = BlendingFactor.SourceAlpha;
-    pipeline.alphaBlendDestination = BlendingFactor.InverseSourceAlpha;
+    _pipeline.blendSource = BlendingFactor.SourceAlpha;
+    _pipeline.blendDestination = BlendingFactor.InverseSourceAlpha;
+    _pipeline.alphaBlendSource = BlendingFactor.SourceAlpha;
+    _pipeline.alphaBlendDestination = BlendingFactor.InverseSourceAlpha;
 
-    pipeline.compile();
+    _pipeline.compile();
 
-    timeID = pipeline.getConstantLocation('u_time');
+    timeID = _pipeline.getConstantLocation('u_time');
   }
 
   public function begin(canvas:Canvas){
-    canvas.g2.pipeline = pipeline;
-    pipeline.set();
+    canvas.g2.pipeline = _pipeline;
+    _pipeline.set();
     canvas.g4.setFloat(timeID, Scheduler.time());
   }
 

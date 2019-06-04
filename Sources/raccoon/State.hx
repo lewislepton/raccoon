@@ -6,7 +6,7 @@ import raccoon.Scene;
 
 class State extends Scene {
 	public static var activeState:State;
-	static var states:Map<String, State>;
+	private static var _states:Map<String, State>;
 
 	public function new(){
 		super();
@@ -41,19 +41,19 @@ class State extends Scene {
 	public function onGamepadButton(button:Int, value:Float){}
 
 	public static function setup(){
-		states = new Map<String, State>();
+		_states = new Map<String, State>();
 	}
 
 	public static function addState(name:String, state:State):State {
-		states.set(name, state);
+		_states.set(name, state);
 		return state;
 	}
 
 	public static function removeState(name:String){
-		states.remove(name);
+		_states.remove(name);
 	}
 
 	public static function set(name:String){
-		activeState = states.get(name);
+		activeState = _states.get(name);
 	}
 }

@@ -5,6 +5,7 @@ using kha.graphics2.GraphicsExtension;
 import kha.Color;
 import kha.Assets;
 
+import raccoon.Raccoon;
 import raccoon.Entity;
 import raccoon.particle.Particle;
 import raccoon.tool.Util;
@@ -27,7 +28,7 @@ class Emitter extends Entity {
 		var p = arParticle.length;
 		while (p --> 0){
 			arParticle[p].update();
-			if (arParticle[p].position.x <= 0 || arParticle[p].position.x >= Main.WIDTH || arParticle[p].position.y <= 0 || arParticle[p].position.y >= Main.HEIGHT){
+			if (arParticle[p].position.x <= 0 || arParticle[p].position.x >= Raccoon.BUFFERWIDTH || arParticle[p].position.y <= 0 || arParticle[p].position.y >= Raccoon.BUFFERHEIGHT){
 				arParticle.splice(p, 1);
 			}
 		}

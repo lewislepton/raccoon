@@ -5,9 +5,9 @@ import raccoon.Entity;
 class Runner {
 	public var speed = 0.6;
 	public var range = 200.00;
-	var rate = 1.0;
-	var x:Float = 0;
-	var y:Float = 0;
+	private var _rate = 1.0;
+	private var _x:Float = 0;
+	private var _y:Float = 0;
 
 	public function new(){}
 
@@ -18,19 +18,19 @@ class Runner {
 		var total = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
 		if (total <= range){
-			distanceX = rate * distanceX / total;
-			distanceY = rate * distanceY / total;
+			distanceX = _rate * distanceX / total;
+			distanceY = _rate * distanceY / total;
 
-			x -= distanceX;
-			y -= distanceY;
+			_x -= distanceX;
+			_y -= distanceY;
 
-			var totalDistance = Math.sqrt(x * x + y * y);
+			var totalDistance = Math.sqrt(_x * _x + _y * _y);
 
-			x = speed * x / totalDistance;
-			y = speed * y / totalDistance;
+			_x = speed * _x / totalDistance;
+			_y = speed * _y / totalDistance;
 
-			entity02.position.x += x;
-			entity02.position.y += y;
+			entity02.position.x += _x;
+			entity02.position.y += _y;
 		}
 	}
 }

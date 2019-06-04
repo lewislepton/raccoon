@@ -14,7 +14,7 @@ import js.Browser.window;
 #end
 
 class Raccoon {
-  static var _app:App;
+  private static var _app:App;
   
   public static var WIDTH(default, null):Int = 1280;
   public static var HEIGHT(default, null):Int = 720;
@@ -30,7 +30,7 @@ class Raccoon {
 
   public static var smooth:Bool;
 
-  static var _fps:Float;
+  private static var _fps:Float;
 
   public static function setup(config:RaccoonConfig){
     if (config.width == null) config.width = WIDTH;

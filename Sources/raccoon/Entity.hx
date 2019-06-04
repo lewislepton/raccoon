@@ -6,8 +6,6 @@ import raccoon.collide.Rectangle;
 import raccoon.tool.Direction;
 
 class Entity extends Rectangle {
-	public var platformer = false;
-
 	public function new(x:Float, y:Float, ?width:Float, ?height:Float){
 		super(x, y, width, height);
 	}

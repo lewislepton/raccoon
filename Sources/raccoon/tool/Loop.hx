@@ -1,16 +1,16 @@
 package raccoon.tool;
 
 class Loop {
-	var start:Int;
-	var end:Int;
-	var step:Int;
+	private var _start:Int;
+	private var _end:Int;
+	private var _step:Int;
 
 	public function new(start:Int, end:Int, step:Int){
-		this.start = start;
-		this.end = end;
-		this.step = step;
+		this._start = start;
+		this._end = end;
+		this._step = step;
 	}
 
-	public inline function hasNext() return start < end;
-	public inline function next() return (start += step) - step;
+	public inline function hasNext() return _start < _end;
+	public inline function next() return (_start += _step) - _step;
 }

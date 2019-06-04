@@ -15,12 +15,12 @@ import kha.ScreenCanvas;
 import raccoon.State;
 
 class App {
-  var imageQuality:ImageScaleQuality;
+  private var _imageQuality:ImageScaleQuality;
 
 	public function new(){
 		Raccoon.backbuffer = Image.createRenderTarget(Raccoon.BUFFERWIDTH, Raccoon.BUFFERHEIGHT);
 
-    imageQuality = Raccoon.smooth ? ImageScaleQuality.High:ImageScaleQuality.Low;
+    _imageQuality = Raccoon.smooth ? ImageScaleQuality.High:ImageScaleQuality.Low;
 
 		State.setup();
 
@@ -46,7 +46,7 @@ class App {
 		Raccoon.backbuffer.g2.end();
 
 		canvas.g2.begin();
-    canvas.g2.imageScaleQuality = imageQuality;
+    canvas.g2.imageScaleQuality = _imageQuality;
 		Scaler.scale(Raccoon.backbuffer, canvas, System.screenRotation);
 		canvas.g2.end();
   }

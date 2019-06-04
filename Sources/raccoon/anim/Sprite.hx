@@ -20,41 +20,41 @@ import raccoon.anim.Animation;
 import raccoon.Entity;
 
 class Sprite extends Entity {
-	private var image: Image;
-	private var animation: Animation;
+	private var _image: Image;
+	private var _animation: Animation;
 	
-	var w: Float;
-	var h: Float;
+	private var _w: Float;
+	private var _h: Float;
 	
 	public function new(imagename: String, x:Float = 0, y:Float = 0, width: Int = 0, height: Int = 0){
 		super(x, y, width, height);
-		this.image = Reflect.field(Assets.images, imagename);
-		w = width;
-		h = height;
-		if (this.width  == 0 && image != null) this.width  = image.width;
-		if (this.height == 0 && image != null) this.height = image.height;
-		animation = Animation.create(0);
+		this._image = Reflect.field(Assets.images, imagename);
+		_w = width;
+		_h = height;
+		if (this.width  == 0 && _image != null) this.width  = _image.width;
+		if (this.height == 0 && _image != null) this.height = _image.height;
+		_animation = Animation.create(0);
 	}
 	
 	public function setAnimation(animation: Animation): Void {
-		this.animation.take(animation);
+		this._animation.take(animation);
 	}
 	
 	override public function update(): Void {
 		super.update();
-		animation.next();
+		_animation.next();
 	}
 	
 	override public function render(canvas: Canvas): Void {
 		super.render(canvas);
-		if (image != null) {
+		if (_image != null) {
 			canvas.g2.color = Color.White;
-			canvas.g2.drawScaledSubImage(image, Std.int(animation.get() * w) % image.width, Math.floor(animation.get() * w / image.width) * h, w, h, Math.round(position.x), Math.round(position.y), width, height);
+			canvas.g2.drawScaledSubImage(_image, Std.int(_animation.get() * _w) % _image.width, Math.floor(_animation.get() * _w / _image.width) * _h, _w, _h, Math.round(position.x), Math.round(position.y), width, height);
 		}
 	}
 	
 	public function set(imagename:String): Void {
-		this.image = Reflect.field(Assets.images, imagename);
+		this._image = Reflect.field(Assets.images, imagename);
 	}
 	
 	public function outOfView(): Void {
@@ -62,18 +62,18 @@ class Sprite extends Entity {
 	}
 	
 	function get_width(): Float {
-		return w;
+		return _w;
 	}
 	
 	function set_width(value: Float): Float {
-		return w = value;
+		return _w = value;
 	}
 	
 	function get_height(): Float {
-		return h;
+		return _h;
 	}
 	
 	function set_height(value: Float): Float {
-		return h = value;
+		return _h = value;
 	}
 }

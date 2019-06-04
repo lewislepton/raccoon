@@ -11,7 +11,7 @@ import raccoon.tool.Util;
 
 class Texture extends Entity {
   public var image:Image;
-  var _rot:Float = 0;
+  private var _rot:Float = 0;
   
   public function new(image:Image, x:Float, y:Float, ?width:Float, ?height:Float){
     super(x, y, width, height);

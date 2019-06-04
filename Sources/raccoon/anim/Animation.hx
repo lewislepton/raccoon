@@ -11,10 +11,10 @@ https://github.com/lewislepton/kha-tutorial-series
 */
 
 class Animation {
-	private var indices: Array<Int>;
-	private var speeddiv: Int;
-	private var count: Int;
-	private var index: Int;
+	private var _indices: Array<Int>;
+	private var _speeddiv: Int;
+	private var _count: Int;
+	private var _index: Int;
 	
 	public static function create(index: Int) {
 		var indices = [index];
@@ -28,36 +28,36 @@ class Animation {
 	}
 	
 	public function new(indices: Array<Int>, speeddiv: Int) {
-		this.indices = indices;
-		index = 0;
-		this.speeddiv = speeddiv;
+		this._indices = indices;
+		_index = 0;
+		this._speeddiv = speeddiv;
 	}
 	
 	public function take(animation: Animation) {
-		if (indices == animation.indices) return;
-		indices = animation.indices;
-		speeddiv = animation.speeddiv;
+		if (_indices == animation._indices) return;
+		_indices = animation._indices;
+		_speeddiv = animation._speeddiv;
 		reset();
 	}
 	
 	public function get(): Int {
-		return indices[index];
+		return _indices[_index];
 	}
 	
 	public function getIndex(): Int {
-		return index;
+		return _index;
 	}
 	
 	public function setIndex(index: Int): Void {
-		if (index < indices.length) this.index = index;
+		if (index < _indices.length) this._index = index;
 	}
 	
 	public function next(): Bool {
-		++count;
-		if (count % speeddiv == 0) {
-			++index;
-			if (index >= indices.length) {
-				index = 0;
+		++_count;
+		if (_count % _speeddiv == 0) {
+			++_index;
+			if (_index >= _indices.length) {
+				_index = 0;
 				return false;
 			}
 		}
@@ -65,7 +65,7 @@ class Animation {
 	}
 	
 	public function reset(): Void {
-		count = 0;
-		index = 0;
+		_count = 0;
+		_index = 0;
 	}
 }
