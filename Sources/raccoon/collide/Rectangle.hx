@@ -6,7 +6,7 @@ import raccoon.tool.Direction;
 
 class Rectangle extends Object {
 	public var onGround = false;
-	private var _collision:Int;
+	public var direction:Int;
 	
 	public function new(x:Float, y:Float, width:Float, height:Float){
 		super(x, y, width, height);
@@ -32,45 +32,45 @@ class Rectangle extends Object {
 				overlap.y = combined.y - Math.abs(dy);
 				if (overlap.x >= overlap.y){
 					if (dy > 0){
-						this._collision = Direction.UP;
+						this.direction = Direction.UP;
 						this.position.y += overlap.y;
 					} else {
-						this._collision = Direction.DOWN;
+						this.direction = Direction.DOWN;
 						this.position.y -= overlap.y;
 					}
 				} else {
 					if (dx > 0){
-						this._collision = Direction.LEFT;
+						this.direction = Direction.LEFT;
 						this.position.x += overlap.x;
 					} else {
-						this._collision = Direction.RIGHT;
+						this.direction = Direction.RIGHT;
 						this.position.x -= overlap.x;
 					}
 				}
 			} else {
-				this._collision = Direction.NONE;
+				this.direction = Direction.NONE;
 			}
 		} else {
-			this._collision = Direction.NONE;
+			this.direction = Direction.NONE;
 		}
 		return false;
 	}
 
 	function checkRectCollision(){
-		if (_collision == Direction.DOWN && velocity.y >= 0){
+		if (direction == Direction.DOWN && velocity.y >= 0){
 			onGround = true;
 			velocity.y = 0;
-		} else if (_collision == Direction.UP && velocity.y <= 0){
+		} else if (direction == Direction.UP && velocity.y <= 0){
 			onGround = false;
 			velocity.y = 0;
-		} else if (_collision == Direction.RIGHT && velocity.x >= 0){
+		} else if (direction == Direction.RIGHT && velocity.x >= 0){
 			onGround = false;
 			velocity.x = 0;
-		} else if (_collision == Direction.LEFT && velocity.x <= 0){
+		} else if (direction == Direction.LEFT && velocity.x <= 0){
 			onGround = false;
 			velocity.x = 0;
 		}
-		if (_collision != Direction.DOWN && velocity.y > 0){
+		if (direction != Direction.DOWN && velocity.y > 0){
 			onGround = false;
 		}
 	}

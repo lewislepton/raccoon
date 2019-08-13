@@ -18,6 +18,7 @@ import kha.Assets;
 
 import raccoon.anim.Animation;
 import raccoon.Entity;
+import raccoon.math.Vector2B;
 
 class Sprite extends Entity {
 	private var _image: Image;
@@ -25,6 +26,8 @@ class Sprite extends Entity {
 	
 	private var _w: Float;
 	private var _h: Float;
+
+	public var flip:Vector2B;
 	
 	public function new(imagename: String, x:Float = 0, y:Float = 0, width: Int = 0, height: Int = 0){
 		super(x, y, width, height);
@@ -34,6 +37,8 @@ class Sprite extends Entity {
 		if (this.width  == 0 && _image != null) this.width  = _image.width;
 		if (this.height == 0 && _image != null) this.height = _image.height;
 		_animation = Animation.create(0);
+
+		flip = new Vector2B();
 	}
 	
 	public function setAnimation(animation: Animation): Void {
@@ -49,7 +54,9 @@ class Sprite extends Entity {
 		super.render(canvas);
 		if (_image != null) {
 			canvas.g2.color = Color.White;
-			canvas.g2.drawScaledSubImage(_image, Std.int(_animation.get() * _w) % _image.width, Math.floor(_animation.get() * _w / _image.width) * _h, _w, _h, Math.round(position.x), Math.round(position.y), width, height);
+			canvas.g2.pushTranslation(position.x, position.y);
+			canvas.g2.drawScaledSubImage(_image, Std.int(_animation.get() * _w) % _image.width, Math.floor(_animation.get() * _w / _image.width) * _h, _w, _h, (flip.x ? width:0), (flip.y ? height:0), flip.x ? -width:width, flip.y ? -height:height);
+			canvas.g2.popTransformation();
 		}
 	}
 	
