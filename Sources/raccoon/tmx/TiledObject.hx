@@ -22,8 +22,9 @@
 package raccoon.tmx;
 
 import kha.math.Vector2;
+import raccoon.Entity;
 
-class TiledObject {
+class TiledObject extends Entity {
 	/** The objectgroup this object belongs to */
 	public var parent(default, null):TiledObjectGroup;
 
@@ -37,16 +38,16 @@ class TiledObject {
 	public var type(default, null):String;
 
 	/** The x coordinate of this object (in pixels!) */
-	public var x(default, null):Int;
+	// public var x(default, null):Int;
 
-	/** The y coordinate of this object (in pixels!) */
-	public var y(default, null):Int;
+	// /** The y coordinate of this object (in pixels!) */
+	// public var y(default, null):Int;
 
-	/** The width of this object in pixels */
-	public var width(default, null):Int;
+	// /** The width of this object in pixels */
+	// public var width(default, null):Int;
 
-	/** The width of this object in pixels */
-	public var height(default, null):Int;
+	// /** The width of this object in pixels */
+	// public var height(default, null):Int;
 
 	/** Checks if this object has a polygons */
 	public var hasPolygon(get, null):Bool;
@@ -65,14 +66,15 @@ class TiledObject {
 
 	private function new(parent:TiledObjectGroup, gid:Int, name:String, type:String, x:Int, y:Int, width:Int, height:Int, polygon:TiledPolygon,
 			polyline:TiledPolyline, properties:Map<String, String>) {
+				super(x, y, width, height);
 		this.parent = parent;
 		this.gid = gid;
 		this.name = name;
 		this.type = type;
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
+		// this.x = x;
+		// this.y = y;
+		// this.width = width;
+		// this.height = height;
 		this.polygon = polygon;
 		this.polyline = polyline;
 		this.properties = properties;

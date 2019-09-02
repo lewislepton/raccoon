@@ -50,4 +50,8 @@ class Emitter extends Entity {
 			arParticle.push(particle);
 		}
 	}
+
+	public function empty(){
+		arParticle = [];
+	}
 }
